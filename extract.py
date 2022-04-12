@@ -6,7 +6,7 @@ import pandas as pd
 from pytesseract import pytesseract
 
 def expand(bbox, marginX=15, marginY=10):
-    # supose bbox is x, y, w, h
+    # suppose bbox is x, y, w, h
     return [
         bbox[0] - marginX,
         bbox[1] - marginY,
@@ -25,7 +25,7 @@ def extract_data(in_file=r'./2022-04-03/Grandview Theater Lodge.png', out_file=r
  	# Applying dilation and erosion on the threshold image to find horizontal lines
 	# Erosion finds min value over kernel
 	horizontal = cv2.erode(thresh, rect_kernel)
-	# Dilation finds max value over kernet
+	# Dilation finds max value over kernel
 	horizontal = cv2.dilate(horizontal, rect_kernel, iterations = 1)
  
 	# Finding boxes around text
